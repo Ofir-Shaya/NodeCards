@@ -1,0 +1,69 @@
+@local=http://localhost:3000
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VkZWI5ZjRmMzk1ODBhOWQ5OWI0ODkiLCJiaXoiOnRydWUsImlhdCI6MTY3NjUzNjczN30.y1pZZ5ALDm0XXa0E9S8McknGM4Gqxz7A-HMkLSkBdzQ
+
+### register a new user, Question 1
+POST {{local}}/users/
+Content-Type: application/json
+
+{
+    "name": "OfirBiz", 
+    "email": "OfirBiz@gmail.com",
+    "password": "gjkmodlas", 
+    "biz": true
+}
+
+### authenticate (login) an existing user, Question 2
+POST {{local}}/auth
+Content-Type: application/json
+
+{
+    "email":"OfirBiz@gmail.com",
+    "password": "gjkmodlas"
+}
+
+### get logged in user's information, Question 3
+GET {{local}}/users/me
+x-auth-token: {{token}}
+
+### create new card, Question 4
+POST {{local}}/cards/
+x-auth-token: {{token}}
+Content-Type: application/json
+
+{
+"bizName": "Cards",
+"bizDescription": "Game cards",
+"bizAddress": "Lehavim Lehavim",
+"bizPhone": "0501234567",
+"bizImage": "https://i.imgur.com/QYP8RJ2.png"
+}
+
+### find card by id, Question 5
+GET {{local}}/cards/63edebb44f39580a9d99b49a
+x-auth-token:{{token}}
+Content-Type: application/json
+
+
+
+### update card by id, Question 6
+PUT {{local}}/cards/63edebb44f39580a9d99b49a
+x-auth-token:{{token}}
+Content-Type: application/json
+
+{  
+    "bizName":"updated",
+    "bizAddress":"new Addres",
+    "bizPhone":"0525381648",
+    "bizDescription":"UPDATEEEEEEEEEEEE",
+    "bizImage":"https://i.imgur.com/newwwww.png"
+}
+
+### delete card, Question 7
+DELETE  {{local}}/cards/63edebb24f39580a9d99b48e
+x-auth-token:{{token}}
+Content-Type: application/json
+
+### get all cards, Question 8
+GET {{local}}/cards/all_cards/63edeb9f4f39580a9d99b489
+x-auth-token:{{token}}
+Content-Type: application/json
