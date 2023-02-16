@@ -1,13 +1,13 @@
 @local=http://localhost:3000
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VkZWI5ZjRmMzk1ODBhOWQ5OWI0ODkiLCJiaXoiOnRydWUsImlhdCI6MTY3NjUzNjczN30.y1pZZ5ALDm0XXa0E9S8McknGM4Gqxz7A-HMkLSkBdzQ
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VlNmM0MDgxMjUxMTgwZjNiZDE1MmUiLCJiaXoiOnRydWUsImlhdCI6MTY3NjU2OTY2OH0.LZ9nRUUblLJAy7CRw01WC51Hc10ZYKB52lp-aRK4ULQ
 
 ### register a new user, Question 1
 POST {{local}}/users/
 Content-Type: application/json
 
 {
-    "name": "OfirBiz", 
-    "email": "OfirBiz@gmail.com",
+    "name": "OfirBizaaa", 
+    "email": "OfirBizaaa@gmail.com",
     "password": "gjkmodlas", 
     "biz": true
 }
@@ -17,7 +17,7 @@ POST {{local}}/auth
 Content-Type: application/json
 
 {
-    "email":"OfirBiz@gmail.com",
+    "email":"OfirBizaaa@gmail.com",
     "password": "gjkmodlas"
 }
 
@@ -63,7 +63,7 @@ DELETE  {{local}}/cards/63edebb24f39580a9d99b48e
 x-auth-token:{{token}}
 Content-Type: application/json
 
-### get all cards, Question 8
-GET {{local}}/cards/all_cards/63edeb9f4f39580a9d99b489
+### get all user cards, Question 8
+GET {{local}}/users/cards
 x-auth-token:{{token}}
 Content-Type: application/json

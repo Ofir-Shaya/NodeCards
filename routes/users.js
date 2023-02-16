@@ -8,6 +8,8 @@ const authMW = require("../middleware/auth");
 
 const { User, validateUser } = require("../models/users");
 
+const { Card } = require("../models/cards");
+
 // Question 1
 
 router.post("/", async (req, res) => {
@@ -40,6 +42,18 @@ router.post("/", async (req, res) => {
 router.get("/me", authMW, async (req, res) => {
   const user = await User.findById(req.user._id, { password: 0 });
   res.send(user);
+});
+
+// Question 8
+
+// GET request for getting multiple cards
+
+router.get("/cards", authMW, async (req, res) => {
+  console.log(req.user);
+  !req.user && res.status(400).send("Invalid user");
+
+  const cards = await Card.find({ user_id: req.user._id });
+  res.send(cards);
 });
 
 module.exports = router;

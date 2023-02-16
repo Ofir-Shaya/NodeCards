@@ -1,5 +1,3 @@
-const express = require("express");
-
 const {
   Card,
   validateCard,
@@ -95,7 +93,7 @@ const getAllCards = async (req, res) => {
     res.status(401).send("Access denied");
     return;
   }
-  const cards = await Card.find({ user_id: req.params.id });
+  const cards = await Card.find({ user_id: req.user._id });
   res.send(cards);
 };
 
