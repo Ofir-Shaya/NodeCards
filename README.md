@@ -24,4 +24,4 @@ Question 7 - DELETE delete card:
 ./routes/cards.js, ./services/service.js  
 
 Question 8 - GET get all cards by user:
-./routes/cards.js, ./services/service.js  
+./routes/users.js
