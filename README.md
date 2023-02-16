@@ -1,6 +1,6 @@
 # NodeCards
 
-Home work project
+Homework project
 
 Question 1 - POST registeration:
 ./routes/users.js 
